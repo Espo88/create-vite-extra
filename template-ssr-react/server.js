@@ -34,8 +34,16 @@ if (!isProduction) {
   app.use(base, sirv('./dist/client', { extensions: [] }))
 }
 
+//Serve API
+const api = express.Router();
+app.use('/api/v1/', api);
+
+api.get('/', async (req, res)=>{
+  res.send('Welcome to API')
+})
+
 // Serve HTML
-app.use('*', async (req, res) => {
+app.get('*', async (req, res) => {
   try {
     const url = req.originalUrl.replace(base, '')
 
