@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "Bjorn Lu",
   "bin": {
-    "create-vite-extra": "index.js"
+    "create-vite": "index.js"
   },
   "files": [
     "index.js",
